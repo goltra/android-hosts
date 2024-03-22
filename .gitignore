@@ -152,3 +152,4 @@ fabric.properties
 hosts
 hosts_template
 .env
+.idea
