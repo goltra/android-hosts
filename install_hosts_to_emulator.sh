@@ -65,3 +65,4 @@ echo '=> ' $(adb -s $emulator_name push ./hosts /system/etc/hosts)
 # Mostramos el contenido actual del fichero hosts del emulador
 echo '=> Contenido del fichero hosts en el emulador tras actualizarlo'
 adb shell cat /system/etc/hosts
+adb unroot
