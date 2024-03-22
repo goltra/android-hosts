@@ -34,7 +34,7 @@ fi
 
 # Arrancamos el emulador
 echo '=> Arrancando el emulador'
-emulator -avd $device -writable-system -no-snapshot &
+emulator -avd $device -writable-system &
 
 # Esperamos a que el emulador arranque
 while [ $arrancado -lt 1 ]
@@ -60,9 +60,9 @@ emulator_name=$(adb devices | sed -n '2 p' | awk '{print $1}')
 echo '=> Emulador arrancado ' + $emulator_name
 echo '=> ' $(adb root)
 echo '=> ' $(adb -s $emulator_name remount)
-echo '=> ' $(adb -s $emulator_name push ./hosts /system/etc/hosts)
+echo '=> ' $(adb -s $emulator_name push ./hosts /etc/hosts)
 
 # Mostramos el contenido actual del fichero hosts del emulador
 echo '=> Contenido del fichero hosts en el emulador tras actualizarlo'
-adb shell cat /system/etc/hosts
+adb shell cat /etc/hosts
 adb unroot
