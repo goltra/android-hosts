@@ -34,7 +34,7 @@ fi
 
 # Arrancamos el emulador
 echo '=> Arrancando el emulador'
-emulator -avd $device -writable-system &
+emulator -avd $device -writable-system -no-snapshot &
 
 # Esperamos a que el emulador arranque
 while [ $arrancado -lt 1 ]
@@ -53,6 +53,7 @@ ip=$(grep ip .env | cut -d '=' -f2)
 echo '=> Ip obtenida del fichero .env: ' $ip
 echo '=> Generando el archivo hosts'
 sed "s/{ip}/$ip/g" hosts_template > hosts
+echo "" >> hosts # Añadimos un salto de línea al final del archivo
 
 # Montamos el sistema de archivos en modo lectura/escritura y copiamos el archivo hosts
 emulator_name=$(adb devices | sed -n '2 p' | awk '{print $1}')
