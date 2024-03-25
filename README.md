@@ -1,4 +1,8 @@
-Utilidad para generar un fichero hosts y pasarlo a un emulador android.
+Utilidad para generar un fichero hosts y pasarlo a un emulador android. También hay un script
+que permite arrancar cada emulador instalado con el sistema de ficheros en modo escritura de modo
+que los cambios hechos previamente en el host aparezcan. Esto se hace porque a partir del sdk 30
+cuando arrancas el emulador sin el sistema de ficheros en modo escritura, los cambios que hubieras hecho 
+en el hosts no aparecen.
 
 **IMPORTANTE**
 
