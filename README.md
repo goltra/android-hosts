@@ -12,6 +12,7 @@ permiten montar el sistema en modo escritura.
 ## ¿Como se usa?
 
 - Crea el fichero .env. Debes configurar el fichero .env con la ip donde quieres que apunten los hosts.
+Ejemplo: ip=192.168.5.188
 
 - Debes crear el fichero **hosts_template**. En el fichero hosts_template debe añadir las entradas que quieras que tenga el fichero hosts 
 donde la ip será la variable {ip}. Ejemplo: 
