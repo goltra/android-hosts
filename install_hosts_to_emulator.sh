@@ -10,7 +10,7 @@ Para poder ejecutar este script es necesario que no haya ningún emulador arranc
 fi
 
 # Listamos los emuladores disponibles y pedimos al usuario que seleccione uno
-emuladores=$(emulator -list-avds)
+emuladores=$(emulator -list-avds | grep -v '^INFO' | grep -v '^Storing')
 echo "Emuladores disponibles:\n"
 i=1
 for emulador in $emuladores
