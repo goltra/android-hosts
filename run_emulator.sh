@@ -1,5 +1,5 @@
 # Listamos los emuladores disponibles y pedimos al usuario que seleccione uno
-emuladores=$(emulator -list-avds)
+emuladores=$(emulator -list-avds | grep -v '^INFO' | grep -v '^Storing' | grep -v '^crashdata')
 echo "Emuladores disponibles:\n"
 i=1
 for emulador in $emuladores
